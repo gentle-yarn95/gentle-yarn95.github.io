@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄果短剧官网-黄果短剧官网在线看_黄果短剧热门剧集与播放入口</title>
+<meta name="description" content="黄果短剧官网首页，汇集热门短剧剧集、分类浏览与在线播放入口，说明黄果短剧官网的观剧方式、剧集类型与常见问题，帮助观众快速找到想看的内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f6a623'/%3E%3Cpath d='M32 12c10 0 16 8 16 17 0 10-8 15-16 15s-16-5-16-15c0-9 6-17 16-17z' fill='%23fff7e6'/%3E%3Cpath d='M32 20c-5 0-9 5-9 10 0 5 4 8 9 8s9-3 9-8c0-5-4-10-9-10z' fill='%23e8890c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --orange:#e8890c;
+  --orange-deep:#c46f05;
+  --amber:#f6a623;
+  --cream:#fff8ec;
+  --cream-2:#fdf1dc;
+  --ink:#2b2118;
+  --ink-soft:#5d4f42;
+  --line:#ecdcc3;
+  --white:#ffffff;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.container{width:min(1140px,92vw);margin:0 auto}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,248,236,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;letter-spacing:.5px;color:var(--orange-deep)}
+.brand .logo-mark{width:36px;height:36px;flex:0 0 36px}
+.brand-text{white-space:nowrap}
+.main-nav{display:flex;gap:6px;flex-wrap:wrap}
+.main-nav a{
+  font-size:.92rem;color:var(--ink-soft);padding:6px 12px;border-radius:999px;
+  transition:background .2s,color .2s;
+}
+.main-nav a:hover,.main-nav a:focus-visible{background:var(--cream-2);color:var(--orange-deep)}
+.nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:.9rem;color:var(--ink-soft);cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#fff4e0 0%,#ffe9c9 55%,#ffdfb2 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(246,166,35,.42),rgba(246,166,35,0) 70%);
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:54px 0 58px}
+.hero h1{
+  font-size:clamp(1.7rem,3.4vw,2.5rem);
+  line-height:1.3;letter-spacing:.5px;color:#3a2712;margin-bottom:14px;
+}
+.hero .lede{font-size:1rem;color:var(--ink-soft);max-width:34em;margin-bottom:22px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 24px;
+  font-size:.95rem;font-weight:700;transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(232,137,12,.28)}
+.btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--orange-deep);border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--cream-2)}
+.hero-facts{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.hero-facts div{font-size:.86rem;color:var(--ink-soft)}
+.hero-facts strong{display:block;font-size:1.2rem;color:var(--orange-deep);font-weight:800}
+.hero-art{justify-self:center;width:100%;max-width:340px}
+.hero-art figcaption{font-size:.78rem;color:#8a755c;text-align:center;margin-top:8px}
+
+/* ---------- section base ---------- */
+section{padding:52px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px;flex-wrap:wrap}
+.section-head h2{font-size:clamp(1.25rem,2.3vw,1.6rem);color:#3a2712;letter-spacing:.4px}
+.section-head h2 span{color:var(--orange)}
+.section-head p{font-size:.9rem;color:var(--ink-soft);max-width:36em}
+.eyebrow{display:inline-block;font-size:.76rem;letter-spacing:2px;color:var(--orange-deep);font-weight:700;margin-bottom:6px}
+
+/* ---------- categories ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.cat-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.cat-card:hover{border-color:var(--amber);transform:translateY(-3px);box-shadow:0 12px 26px rgba(196,111,5,.10)}
+.cat-card .cat-icon{width:34px;height:34px;margin-bottom:12px}
+.cat-card h3{font-size:1rem;margin-bottom:6px;color:#3a2712}
+.cat-card p{font-size:.85rem;color:var(--ink-soft);line-height:1.65}
+
+/* ---------- episodes ---------- */
+.ep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.ep-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;
+}
+.ep-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(196,111,5,.12)}
+.ep-cover{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#ffd79a,#f6a623)}
+.ep-cover svg{position:absolute;inset:0;width:100%;height:100%}
+.ep-badge{
+  position:absolute;left:10px;top:10px;background:rgba(43,33,24,.78);color:#fff;
+  font-size:.72rem;padding:3px 9px;border-radius:999px;letter-spacing:.5px;
+}
+.ep-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.ep-body h3{font-size:1rem;line-height:1.45;color:#3a2712}
+.ep-body .ep-desc{font-size:.85rem;color:var(--ink-soft);flex:1}
+.ep-meta{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:#8a755c;border-top:1px dashed var(--line);padding-top:10px}
+.ep-meta .play-link{color:var(--orange-deep);font-weight:700}
+.ep-meta .play-link:hover{text-decoration:underline}
+
+/* ---------- content columns ---------- */
+.content-block{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:start}
+.prose h2{font-size:1.35rem;margin-bottom:12px;color:#3a2712}
+.prose h3{font-size:1.02rem;margin:20px 0 8px;color:var(--orange-deep)}
+.prose p{font-size:.94rem;color:var(--ink-soft);margin-bottom:12px;line-height:1.85}
+.prose ul{list-style:none;margin:8px 0 14px}
+.prose li{position:relative;padding-left:18px;font-size:.92rem;color:var(--ink-soft);margin-bottom:8px}
+.prose li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--amber)}
+.side-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+  position:sticky;top:84px;
+}
+.side-card h3{font-size:1rem;margin-bottom:12px;color:#3a2712}
+.side-card p{font-size:.86rem;color:var(--ink-soft);margin-bottom:12px}
+.side-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.side-list li{font-size:.86rem;color:var(--ink-soft);display:flex;gap:8px;align-items:flex-start}
+.side-list .num{
+  flex:0 0 20px;height:20px;border-radius:6px;background:var(--cream-2);color:var(--orange-deep);
+  font-size:.72rem;font-weight:800;display:grid;place-items:center;margin-top:2px;
+}
+.download-btn{width:100%;justify-content:center;margin-top:6px}
+
+/* ---------- faq ---------- */
+.faq{display:grid;gap:12px;max-width:860px;margin:0 auto}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+}
+details[open]{border-color:var(--amber);background:#fffdf7}
+summary{font-size:.95rem;font-weight:700;color:#3a2712;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--orange);font-weight:800;font-size:1.1rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{font-size:.88rem;color:var(--ink-soft);margin-top:10px;line-height:1.8}
+
+/* ---------- footer ---------- */
+.site-footer{background:#2b2118;color:#d9cbb8;padding:40px 0 28px;margin-top:20px}
+.footer-top{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#ffd79a;font-size:1rem}
+.footer-brand .logo-mark{width:32px;height:32px}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;font-size:.86rem}
+.footer-links a{color:#d9cbb8}
+.footer-links a:hover{color:#ffd79a}
+.footer-note{font-size:.8rem;color:#9c8b76;margin-top:18px;line-height:1.8}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding:40px 0 44px}
+  .hero-art{order:-1;max-width:260px;margin-bottom:8px}
+  .content-block{grid-template-columns:1fr}
+  .side-card{position:static}
+}
+@media (max-width:720px){
+  .header-inner{flex-wrap:wrap}
+  .nav-toggle{display:inline-block;order:3}
+  .main-nav{display:none;width:100%;order:4;padding-top:8px;border-top:1px solid var(--line);margin-top:6px}
+  .main-nav.open{display:flex}
+  .main-nav a{background:var(--cream-2);font-size:.88rem}
+  section{padding:38px 0}
+  .hero-facts{gap:18px}
+  .hero-facts strong{font-size:1.05rem}
+  .ep-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:420px){
+  .cat-grid{grid-template-columns:1fr}
+  .btn{padding:10px 18px;font-size:.9rem}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="黄果短剧官网首页">
+      <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#f6a623"/>
+        <path d="M32 12c10 0 16 8 16 17 0 10-8 15-16 15s-16-5-16-15c0-9 6-17 16-17z" fill="#fff8ec"/>
+        <path d="M32 20c-5 0-9 5-9 10 0 5 4 8 9 8s9-3 9-8c0-5-4-10-9-10z" fill="#e8890c"/>
+        <path d="M30 24l9 6-9 6z" fill="#fff8ec"/>
+      </svg>
+      <span class="brand-text">黄果短剧官网</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav">导航</button>
+    <nav class="main-nav" id="mainNav" aria-label="主导航">
+      <a href="#genres">剧集分类</a>
+      <a href="#hot">热门短剧</a>
+      <a href="#how">观看方式</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download">客户端下载</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">短剧在线观看</span>
+        <h1 id="heroTitle">黄果短剧官网</h1>
+        <p class="lede">黄果短剧官网是集中浏览与观看黄果短剧剧集的入口。这里按类型与热度整理剧集目录，说明每部短剧的题材、集数区间与看点，并提供在线播放与客户端下载的入口说明，方便你按兴趣快速找到想看的短剧。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5l11 7-11 7V5z" fill="#fff"/></svg>
+            浏览热门短剧
+          </a>
+          <a class="btn btn-ghost" href="#genres">按类型挑选</a>
+        </div>
+        <div class="hero-facts">
+          <div><strong>8</strong>短剧类型</div>
+          <div><strong>1–3</strong>分钟单集时长</div>
+          <div><strong>竖屏</strong>移动端观看</div>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <svg viewBox="0 0 320 300" role="img" aria-label="黄果短剧官网竖屏播放示意插画">
+          <defs>
+            <linearGradient id="phoneBg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffd79a"/>
+              <stop offset="1" stop-color="#f6a623"/>
+            </linearGradient>
+          </defs>
+          <rect x="70" y="18" width="180" height="264" rx="26" fill="#3a2712" opacity=".9"/>
+          <rect x="78" y="26" width="164" height="248" rx="20" fill="url(#phoneBg)"/>
+          <rect x="112" y="34" width="96" height="8" rx="4" fill="#3a2712" opacity=".35"/>
+          <circle cx="160" cy="140" r="42" fill="#fff8ec" opacity=".92"/>
+          <path d="M148 118l34 22-34 22z" fill="#e8890c"/>
+          <rect x="96" y="206" width="128" height="10" rx="5" fill="#fff8ec" opacity=".85"/>
+          <rect x="96" y="226" width="88" height="10" rx="5" fill="#fff8ec" opacity=".65"/>
+          <circle cx="238" cy="72" r="16" fill="#fff8ec" opacity=".9"/>
+          <path d="M232 66c4-4 12-2 12 6s-8 10-12 6" stroke="#e8890c" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <figcaption>竖屏短剧播放界面示意</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- GENRES -->
+  <section id="genres" aria-labelledby="genresTitle">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">内容分区</span>
+          <h2 id="genresTitle">黄果短剧官网的<span>剧集类型</span></h2>
+        </div>
+        <p>短剧节奏快、单集短，按类型进入更容易找到合口味的作品。以下分类依据剧集题材整理，点击可查看对应类型的剧集条目。</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-card" href="#hot">
+          <svg class="cat-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 5l3.4 7 7.6 1.1-5.5 5.3 1.3 7.6L16 22.4 9.2 26l1.3-7.6L5 13.1 12.6 12z" stroke="#e8890c" stroke-width="2" stroke-linejoin="round"/></svg>
+          <h3>都市情感</h3>
+          <p>职场、婚恋、家庭关系等现代生活题材，冲突集中、反转密集。</p>
+        </a>
+        <a class="cat-card" href="#hot">
+          <svg class="cat-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 24V10l10-5 10 5v14" stroke="#e8890c" stroke-width="2" stroke-linejoin="round"/><path d="M12 24v-7h8v7" stroke="#e8890c" stroke-width="2"/></svg>
+          <h3>古装权谋</h3>
+          <p>架空王朝背景下的权谋与情感线并进，服化道与场景是主要看点。</p>
+        </a>
+        <a class="cat-card" href="#hot">
+          <svg class="cat-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="10" stroke="#e8890c" stroke-width="2"/><path d="M16 10v6l4 3" stroke="#e8890c" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>悬疑推理</h3>
+          <p>以线索推进为主，单集留钩子，适合连续追看。</p>
+        </a>
+        <a class="cat-card" href="#hot">
+          <svg class="cat-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 22l5-12 5 8 6-14" stroke="#e8890c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>甜宠轻喜</h3>
+          <p>轻松日常与轻喜剧桥段为主，观看门槛低，适合碎片时间。</p>
+        </a>
+        <a class="cat-card" href="#hot">
+          <svg class="cat-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 5l9 5v12l-9 5-9-5V10z" stroke="#e8890c" stroke-width="2" stroke-linejoin="round"/><path d="M16 16v6" stroke="#e8890c" stroke-width="2"/></svg>
+          <h3>玄幻热血</h3>
+          <p>成长线明确，打斗与特效镜头集中，追更体验强。</p>
+        </a>
+        <a class="cat-card" href="#hot">
+          <svg class="cat-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10 26V8h12v18" stroke="#e8890c" stroke-width="2"/><path d="M6 26h20" stroke="#e8890c" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>年代励志</h3>
+          <p>以时代变迁为背景，讲述个人奋斗与家庭选择。</p>
+        </a>
+        <a class="cat-card" href="#hot">
+          <svg class="cat-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="6" y="8" width="20" height="16" rx="3" stroke="#e8890c" stroke-width="2"/><path d="M13 13l7 3-7 3z" stroke="#e8890c" stroke-width="2" stroke-linejoin="round"/></svg>
+          <h3>短剧合集</h3>
+          <p>按主题打包的剧集合集，适合一次看完整条故事线。</p>
+        </a>
+        <a class="cat-card" href="#hot">
+          <svg class="cat-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 26s-9-5.5-9-12a5 5 0 019-3 5 5 0 019 3c0 6.5-9 12-9 12z" stroke="#e8890c" stroke-width="2" stroke-linejoin="round"/></svg>
+          <h3>口碑推荐</h3>
+          <p>按观众讨论度与完播表现整理的推荐位，作为选剧参考。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOT -->
+  <section id="hot" aria-labelledby="hotTitle" style="background:var(--cream-2);border-block:1px solid var(--line)">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">剧集目录</span>
+          <h2 id="hotTitle">正在更新的<span>黄果短剧</span>条目</h2>
+        </div>
+        <p>下列条目展示剧名、题材与简介，点击“查看剧集”可进入对应播放页。具体上线时间与集数以播放页显示为准。</p>
+      </div>
+      <div class="ep-grid">
+
+        <article class="ep-card">
+          <div class="ep-cover">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#ffd79a"/>
+              <circle cx="250" cy="46" r="34" fill="#fff8ec" opacity=".8"/>
+              <path d="M0 150c60-40 120-40 180-10s100 20 140 0v40H0z" fill="#e8890c" opacity=".55"/>
+              <path d="M120 96l34 22-34 22z" fill="#fff8ec"/>
+            </svg>
+            <span class="ep-badge">都市情感</span>
+          </div>
+          <div class="ep-body">
+            <h3>《归途有光》</h3>
+            <p class="ep-desc">离家多年的主角回到旧城，面对家庭旧账与新的选择，用短集形式推进人物关系变化。</p>
+            <div class="ep-meta"><span>竖屏 · 单集约2分钟</span><a class="play-link" href="#hot">查看剧集</a></div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <div class="ep-cover">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#f6a623"/>
+              <rect x="40" y="40" width="90" height="110" rx="8" fill="#fff8ec" opacity=".7"/>
+              <rect x="150" y="66" width="130" height="84" rx="8" fill="#fff8ec" opacity=".5"/>
+              <circle cx="240" cy="52" r="22" fill="#3a2712" opacity=".3"/>
+            </svg>
+            <span class="ep-badge">古装权谋</span>
+          </div>
+          <div class="ep-body">
+            <h3>《长安十二局》</h3>
+            <p class="ep-desc">以朝堂博弈为主线，多条人物线交错，每集结尾留出新的悬念。</p>
+            <div class="ep-meta"><span>竖屏 · 单集约3分钟</span><a class="play-link" href="#hot">查看剧集</a></div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <div class="ep-cover">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#3a2712"/>
+              <circle cx="160" cy="86" r="44" fill="none" stroke="#f6a623" stroke-width="4"/>
+              <path d="M160 58v28l20 14" stroke="#f6a623" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="160" cy="86" r="6" fill="#f6a623"/>
+            </svg>
+            <span class="ep-badge">悬疑推理</span>
+          </div>
+          <div class="ep-body">
+            <h3>《第七个证人》</h3>
+            <p class="ep-desc">围绕一桩旧案展开，线索逐集释放，适合喜欢边看边推的观众。</p>
+            <div class="ep-meta"><span>竖屏 · 单集约2分钟</span><a class="play-link" href="#hot">查看剧集</a></div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <div class="ep-cover">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#ffe9c9"/>
+              <path d="M0 140c70-50 140-50 200-20s90 20 120 0v60H0z" fill="#f6a623" opacity=".7"/>
+              <circle cx="80" cy="58" r="26" fill="#e8890c" opacity=".6"/>
+              <circle cx="120" cy="58" r="26" fill="#e8890c" opacity=".4"/>
+            </svg>
+            <span class="ep-badge">甜宠轻喜</span>
+          </div>
+          <div class="ep-body">
+            <h3>《合租合伙人》</h3>
+            <p class="ep-desc">都市合租日常里的误会与和解，用轻喜剧方式讲两个人的相处。</p>
+            <div class="ep-meta"><span>竖屏 · 单集约2分钟</span><a class="play-link" href="#hot">查看剧集</a></div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <div class="ep-cover">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#c46f05"/>
+              <path d="M40 150l60-80 40 50 50-70 90 100z" fill="#fff8ec" opacity=".65"/>
+              <path d="M160 40l24 40h-48z" fill="#ffd79a"/>
+            </svg>
+            <span class="ep-badge">玄幻热血</span>
+          </div>
+          <div class="ep-body">
+            <h3>《灵脉少年》</h3>
+            <p class="ep-desc">少年成长线与对抗线并行，打斗镜头密集，适合连续追看。</p>
+            <div class="ep-meta"><span>竖屏 · 单集约3分钟</span><a class="play-link" href="#hot">查看剧集</a></div>
+          </div>
+        </article>
+
+        <article class="ep-card">
+          <div class="ep-cover">
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#fff4e0"/>
+              <rect x="50" y="50" width="220" height="90" rx="10" fill="#f6a623" opacity=".35"/>
+              <path d="M70 118l40-40 34 26 46-50 60 64" stroke="#c46f05" stroke-width="5" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span class="ep-badge">年代励志</span>
+          </div>
+          <div class="ep-body">
+            <h3>《厂区来信》</h3>
+            <p class="ep-desc">以工厂生活为背景，讲述一代人的选择与坚持，故事线完整。</p>
+            <div class="ep-meta"><span>竖屏 · 单集约3分钟</span><a class="play-link" href="#hot">查看剧集</a></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how" aria-labelledby="howTitle">
+    <div class="container content-block">
+      <div class="prose">
+        <span class="eyebrow">观看方式</span>
+        <h2 id="howTitle">在黄果短剧官网怎么看短剧</h2>
+        <p>黄果短剧官网以剧集目录为核心，进入页面后先按类型筛选，再点开具体剧集播放。短剧单集时长普遍在1到3分钟之间，多数采用竖屏拍摄，适合在手机上观看，通勤、排队等碎片时间都能看上一两集。</p>
+
+        <h3>三步找到想看的剧集</h3>
+        <ul>
+          <li>先在“剧集类型”中选一个感兴趣的题材，缩小浏览范围。</li>
+          <li>在剧集卡片上查看题材标签与简介，判断是否符合预期。</li>
+          <li>点击“查看剧集”进入播放页，按顺序观看或从最新集开始追更。</li>
+        </ul>
+
+        <h3>浏览时值得留意的信息</h3>
+        <p>每张剧集卡片标注了题材、画面方向与单集大致时长。题材决定故事走向，时长影响单次观看能看几集。若你习惯一次看完整条故事线，可以优先选择“短剧合集”类条目；若更看重悬念推进，悬疑推理类会更合适。</p>
+        <p>黄果短剧官网的剧集条目会随上线情况变化，具体集数、更新节奏与是否完结，以播放页当时显示的内容为准。页面上不标注尚未确认的更新时间，避免给出与实际情况不符的预期。</p>
+
+        <h3>收藏与追更</h3>
+        <p>遇到想看的剧集，可以先记住剧名，再从目录中按名称查找。追更型短剧建议从第一集看起，人物关系与伏笔更容易衔接；已完结的合集类作品则可以从任意一集进入，理解成本较低。</p>
+      </div>
+
+      <aside class="side-card">
+        <h3>选剧小提示</h3>
+        <p>按下面的顺序判断，能更快筛掉不合适的剧集。</p>
+        <ul class="side-list">
+          <li><span class="num">1</span>先看题材标签是否符合口味。</li>
+          <li><span class="num">2</span>再看简介里的主要冲突与人物关系。</li>
+          <li><span class="num">3</span>确认单集时长，匹配你的空闲时间。</li>
+          <li><span class="num">4</span>决定是追更还是看完整合集。</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faqTitle" style="background:var(--cream-2);border-block:1px solid var(--line)">
+    <div class="container">
+      <div class="section-head" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
+        <div>
+          <span class="eyebrow">常见问题</span>
+          <h2 id="faqTitle">关于<span>黄果短剧官网</span>的疑问</h2>
+        </div>
+        <p>整理访问者最常问的几个问题，回答以页面现有信息为准。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>黄果短剧官网主要提供什么内容？</summary>
+          <p>页面以短剧剧集目录为核心，按题材分类展示剧名、简介、画面方向与单集时长，并提供进入具体剧集播放页的入口，同时说明观看方式与客户端下载入口。</p>
+        </details>
+        <details>
+          <summary>短剧一般多长？适合什么时间看？</summary>
+          <p>站内条目标注的单集时长多在1到3分钟之间，采用竖屏形式。适合通勤、午休等碎片时段，一次可以连续看好几集。</p>
+        </details>
+        <details>
+          <summary>剧集更新信息在哪里查看？</summary>
+          <p>具体集数、更新节奏与完结状态以播放页显示为准。目录页只展示已确认的题材与简介信息，不预告尚未确定的上线时间。</p>
+        </details>
+        <details>
+          <summary>可以在手机上观看吗？</summary>
+          <p>可以。短剧本身以竖屏为主，页面在移动端做了适配，导航、字号与卡片排列都按小屏阅读调整。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download" aria-labelledby="dlTitle">
+    <div class="container content-block">
+      <div class="prose">
+        <h2 id="dlTitle">客户端下载与使用说明</h2>
+        <p>为方便在手机上连续观看，黄果短剧官网提供客户端下载入口。客户端主要用于浏览剧集目录与播放短剧，具体功能范围以安装后的实际版本为准。</p>
+        <p>下载前建议确认设备系统版本与存储空间，安装完成后使用同一账号即可在目录中继续查找此前浏览过的剧集。若下载入口尚未开放，页面会保持入口可识别但不可点击的状态，避免误触。</p>
+        <ul>
+          <li>下载文件请以页面提供的正式入口为准。</li>
+          <li>安装后如遇播放问题，可先检查网络与系统权限设置。</li>
+          <li>剧集内容与目录信息会随上线情况调整。</li>
+        </ul>
+      </div>
+      <aside class="side-card">
+        <h3>下载客户端</h3>
+        <p>当前入口为预留位置，正式下载地址开放后可直接替换。</p>
+        <a class="btn btn-primary download-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;opacity:.72">下载</a>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#f6a623"/>
+          <path d="M32 12c10 0 16 8 16 17 0 10-8 15-16 15s-16-5-16-15c0-9 6-17 16-17z" fill="#fff8ec"/>
+          <path d="M32 20c-5 0-9 5-9 10 0 5 4 8 9 8s9-3 9-8c0-5-4-10-9-10z" fill="#e8890c"/>
+          <path d="M30 24l9 6-9 6z" fill="#fff8ec"/>
+        </svg>
+        黄果短剧官网
+      </div>
+      <nav class="footer-links" aria-label="页尾导航">
+        <a href="#genres">剧集分类</a>
+        <a href="#hot">热门短剧</a>
+        <a href="#how">观看方式</a>
+        <a href="#faq">常见问题</a>
+        <a href="#download">客户端下载</a>
+      </nav>
+    </div>
+    <p class="footer-note">黄果短剧官网以短剧目录与观看入口为主，剧集题材、单集时长与更新状态以播放页实际显示为准。本页内容用于帮助访问者了解站点结构与选剧方式。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 720){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+          </html>
