@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91次元动漫官网-91次元动漫官网首页入口_次元动漫资源与更新速览</title>
+<meta name="description" content="91次元动漫官网首页，汇集次元动漫作品浏览入口、分类导航与新番更新速览，帮助动漫爱好者快速找到想看的内容与站内常用栏目。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2316152b'/%3E%3Ccircle cx='32' cy='30' r='13' fill='none' stroke='%23ff7a59' stroke-width='4'/%3E%3Cpath d='M32 17v26M19 30h26' stroke='%23ffd166' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#17162b;
+  --ink-soft:#3b3a52;
+  --muted:#6d6c85;
+  --paper:#f7f6fb;
+  --card:#ffffff;
+  --line:#e6e4f0;
+  --coral:#ff6f4e;
+  --amber:#ffc94d;
+  --violet:#7a5cf0;
+  --sky:#eaf0ff;
+  --radius:18px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto;}
+
+/* 页头 */
+.site-head{
+  position:sticky;top:0;z-index:40;
+  background:rgba(247,246,251,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  display:flex;align-items:center;gap:24px;
+  min-height:72px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.3px;}
+.brand .mark{
+  width:38px;height:38px;border-radius:12px;
+  background:linear-gradient(140deg,var(--ink),#2e2c50);
+  display:grid;place-items:center;flex:none;
+  box-shadow:0 6px 16px rgba(23,22,43,.22);
+}
+.brand .mark svg{width:22px;height:22px;}
+.brand span{color:var(--ink);}
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto;}
+.nav a{
+  font-size:14.5px;color:var(--ink-soft);
+  padding:8px 13px;border-radius:999px;
+  transition:background .18s,color .18s;
+}
+.nav a:hover,.nav a:focus-visible{background:#efeefb;color:var(--violet);outline:none;}
+
+/* 首屏 */
+.hero{padding:52px 0 40px;position:relative;overflow:hidden;}
+.hero::before{
+  content:"";position:absolute;inset:-80px -60px auto auto;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(255,201,77,.35),rgba(255,111,78,.12) 55%,transparent 72%);
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.25fr .85fr;
+  gap:40px;align-items:center;position:relative;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:var(--violet);
+  background:#efecff;border:1px solid #e0daff;
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--coral);display:block;}
+h1{
+  font-size:clamp(30px,4.4vw,46px);
+  line-height:1.24;margin:0 0 18px;
+  letter-spacing:-.5px;font-weight:800;
+}
+h1 em{font-style:normal;color:var(--violet);}
+.hero-lead{font-size:16px;color:var(--ink-soft);max-width:34em;margin:0 0 26px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:600;padding:12px 22px;
+  border-radius:12px;border:1px solid transparent;cursor:pointer;
+  transition:transform .16s,box-shadow .16s,background .16s;
+}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 8px 20px rgba(23,22,43,.22);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(23,22,43,.26);}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink-soft);}
+.btn-ghost:hover{border-color:#cfcbe6;background:#fbfaff;}
+.btn[aria-disabled="true"]{opacity:.55;pointer-events:none;}
+
+.hero-art{
+  position:relative;border-radius:24px;
+  background:linear-gradient(160deg,#fff 0%,#f3f1ff 100%);
+  border:1px solid var(--line);
+  padding:22px;box-shadow:0 18px 40px rgba(58,50,120,.10);
+}
+.hero-art .art-title{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.5px;margin-bottom:14px;}
+.tile-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.tile{
+  aspect-ratio:3/4;border-radius:12px;position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:9px;font-size:11.5px;font-weight:700;color:#fff;
+}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45),transparent 55%);}
+.tile b{position:relative;z-index:2;}
+.t1{background:linear-gradient(150deg,#7a5cf0,#3b2a8f);}
+.t2{background:linear-gradient(150deg,#ff8a5c,#c94a2b);}
+.t3{background:linear-gradient(150deg,#4fb7e8,#235e8f);}
+.hero-note{
+  margin-top:16px;font-size:12.5px;color:var(--muted);
+  display:flex;align-items:center;gap:7px;
+}
+.hero-note svg{width:15px;height:15px;flex:none;color:var(--violet);}
+
+/* 通用区块 */
+section{padding:34px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:20px;flex-wrap:wrap;}
+.sec-head h2{font-size:23px;margin:0;letter-spacing:-.2px;font-weight:800;}
+.sec-head p{margin:6px 0 0;font-size:14px;color:var(--muted);max-width:46em;}
+.sec-link{font-size:14px;font-weight:600;color:var(--violet);white-space:nowrap;}
+.sec-link:hover{text-decoration:underline;}
+
+/* 入口卡片 */
+.entry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.entry{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 18px;transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.entry:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(58,50,120,.09);border-color:#d9d4f3;}
+.entry .ico{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;margin-bottom:13px;
+}
+.entry .ico svg{width:22px;height:22px;}
+.i-violet{background:#efecff;color:var(--violet);}
+.i-coral{background:#ffece6;color:#e2583a;}
+.i-amber{background:#fff5dc;color:#b07c00;}
+.i-sky{background:#e8f1ff;color:#2f6fd0;}
+.entry h3{font-size:15.5px;margin:0 0 6px;font-weight:700;}
+.entry p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.65;}
+
+/* 更新列表 */
+.update-layout{display:grid;grid-template-columns:1.6fr 1fr;gap:22px;align-items:start;}
+.update-list{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;
+}
+.update-item{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:16px 20px;border-bottom:1px solid var(--line);
+}
+.update-item:last-child{border-bottom:none;}
+.dot{
+  width:9px;height:9px;border-radius:50%;margin-top:9px;flex:none;
+}
+.d-new{background:var(--coral);box-shadow:0 0 0 4px rgba(255,111,78,.15);}
+.d-hot{background:var(--violet);box-shadow:0 0 0 4px rgba(122,92,240,.14);}
+.d-calm{background:#c7c4d8;}
+.update-item h4{font-size:15px;margin:0 0 3px;font-weight:700;}
+.update-item p{font-size:13.5px;color:var(--muted);margin:0;}
+.tag{
+  display:inline-block;font-size:11.5px;font-weight:700;
+  padding:1px 8px;border-radius:6px;margin-left:8px;vertical-align:2px;
+}
+.tag-new{background:#ffece6;color:#d4482a;}
+.tag-hot{background:#efecff;color:#5b3fd6;}
+
+.side-card{
+  background:linear-gradient(165deg,#1d1b36,#2b2750);
+  color:#e9e7f7;border-radius:var(--radius);padding:24px 22px;
+}
+.side-card h3{margin:0 0 10px;font-size:17px;color:#fff;}
+.side-card p{font-size:13.5px;color:#b9b5d6;margin:0 0 16px;}
+.side-card .btn{width:100%;justify-content:center;background:var(--amber);color:#3a2a00;font-weight:700;box-shadow:none;font-size:14px;}
+.side-list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:9px;font-size:13.5px;color:#c8c4e2;}
+.side-list li{display:flex;gap:8px;align-items:center;}
+.side-list li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--amber);flex:none;}
+
+/* 内容正文区 */
+.read-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.read-card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:26px 24px;
+}
+.read-card h3{font-size:18px;margin:0 0 10px;font-weight:800;}
+.read-card h3 small{display:block;font-size:12.5px;font-weight:600;color:var(--violet);letter-spacing:.4px;margin-bottom:6px;}
+.read-card p{font-size:14.5px;color:var(--ink-soft);margin:0 0 11px;}
+.read-card p:last-child{margin-bottom:0;}
+
+/* 分类筛选 */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+.chip{
+  font-size:13.5px;padding:7px 15px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);color:var(--ink-soft);
+  cursor:pointer;transition:all .16s;font-family:inherit;
+}
+.chip:hover{border-color:#c9c2ee;color:var(--violet);}
+.chip.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.genre-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.genre{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:18px;transition:border-color .16s,box-shadow .16s;
+}
+.genre:hover{border-color:#d9d4f3;box-shadow:0 8px 20px rgba(58,50,120,.07);}
+.genre h4{margin:0 0 6px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.genre h4 span{
+  width:26px;height:26px;border-radius:8px;background:#f1effc;color:var(--violet);
+  display:grid;place-items:center;font-size:12px;font-weight:800;flex:none;
+}
+.genre p{margin:0;font-size:13.5px;color:var(--muted);}
+
+/* 问答 */
+.faq{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:8px 24px;}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0;}
+.faq details:last-child{border-bottom:none;}
+.faq summary{
+  cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-size:20px;color:var(--violet);font-weight:400;line-height:1;transition:transform .2s;}
+.faq details[open] summary::after{transform:rotate(45deg);}
+.faq details p{margin:10px 0 0;font-size:14.5px;color:var(--ink-soft);}
+
+/* 页尾 */
+.site-foot{
+  margin-top:30px;background:#15142b;color:#b6b2d2;
+  padding:44px 0 30px;font-size:13.5px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:#fff;margin-bottom:12px;}
+.foot-brand .mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(140deg,var(--coral),var(--amber));display:grid;place-items:center;flex:none;}
+.foot-brand .mark svg{width:20px;height:20px;color:#2a1a00;}
+.site-foot p{margin:0 0 10px;line-height:1.8;}
+.site-foot h4{color:#fff;font-size:14px;margin:0 0 12px;font-weight:700;}
+.foot-links{list-style:none;padding:0;margin:0;display:grid;gap:8px;}
+.foot-links a:hover{color:#fff;}
+.foot-bottom{
+  margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.5px;color:#8b87a8;
+}
+
+@media (max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:28px;}
+  .hero-art{order:-1;max-width:420px;}
+  .entry-grid{grid-template-columns:repeat(2,1fr);}
+  .update-layout,.read-grid{grid-template-columns:1fr;}
+  .genre-grid{grid-template-columns:repeat(2,1fr);}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .wrap{width:calc(100% - 28px);}
+  .head-inner{min-height:auto;padding:12px 0;gap:10px;}
+  .brand{font-size:16px;}
+  .brand .mark{width:32px;height:32px;border-radius:10px;}
+  .nav{margin-left:0;width:100%;gap:2px;}
+  .nav a{font-size:13px;padding:6px 10px;}
+  .hero{padding:28px 0 24px;}
+  h1{font-size:28px;}
+  .hero-lead{font-size:15px;}
+  .hero-actions .btn{flex:1;justify-content:center;}
+  section{padding:24px 0;}
+  .sec-head h2{font-size:20px;}
+  .entry-grid,.genre-grid{grid-template-columns:1fr;}
+  .read-card,.faq{padding:20px 18px;}
+  .foot-grid{grid-template-columns:1fr;}
+  .update-item{padding:14px 16px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="91次元动漫官网 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffc94d" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="7" stroke="#ff7a59"/>
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </span>
+      <span>91次元动漫官网</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#entry">浏览入口</a>
+      <a href="#updates">更新速览</a>
+      <a href="#guides">内容频道</a>
+      <a href="#genres">分类导航</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i aria-hidden="true"></i>次元动漫 · 首页入口</span>
+        <h1 id="hero-title">91次元动漫官网</h1>
+        <p class="hero-lead">这里是 91次元动漫官网 的首页，把作品浏览入口、分类导航与近期更新集中在一页。想找一部动画、翻一翻新番动态，或直接进入常用频道，都可以从这里开始。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#entry">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v12H4z"/><path d="M4 9h16"/><path d="M9 21h6"/></svg>
+            进入作品浏览
+          </a>
+          <a class="btn btn-ghost" href="#updates">查看更新速览</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-title">频道预览</div>
+        <div class="tile-row">
+          <div class="tile t1"><b>新番</b></div>
+          <div class="tile t2"><b>热播</b></div>
+          <div class="tile t3"><b>专题</b></div>
+        </div>
+        <div class="hero-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg>
+          栏目内容按更新节奏持续补充
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 浏览入口 -->
+  <section id="entry" aria-labelledby="entry-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="entry-title">从首页进入各频道</h2>
+          <p>91次元动漫官网把常用功能收拢为四个入口，按你的目的选择即可，无需在层级里反复翻找。</p>
+        </div>
+      </div>
+      <div class="entry-grid">
+        <a class="entry" href="#genres">
+          <span class="ico i-violet" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="13" width="7" height="7" rx="1.5"/><rect x="14" y="13" width="7" height="7" rx="1.5"/></svg>
+          </span>
+          <h3>作品分类</h3>
+          <p>按题材与风格归档，先定方向再挑作品。</p>
+        </a>
+        <a class="entry" href="#updates">
+          <span class="ico i-coral" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg>
+          </span>
+          <h3>更新速览</h3>
+          <p>近期上架与热度变化，一屏看完重点。</p>
+        </a>
+        <a class="entry" href="#guides">
+          <span class="ico i-amber" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h7M8 11h7"/></svg>
+          </span>
+          <h3>内容频道</h3>
+          <p>专题与作品笔记，补足观看前后的背景。</p>
+        </a>
+        <a class="entry" href="#faq">
+          <span class="ico i-sky" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.6 2.3c-.7.4-1.1 1-1.1 1.7"/><path d="M12 17h.01"/></svg>
+          </span>
+          <h3>常见问题</h3>
+          <p>入口在哪、内容怎么找，集中解答。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 更新速览 -->
+  <section id="updates" aria-labelledby="updates-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="updates-title">近期更新速览</h2>
+          <p>以下为首页展示的栏目动态示例，按新上架、热度与专题三条线索排列，方便你判断先看哪一块。</p>
+        </div>
+        <a class="sec-link" href="#genres">按分类继续找 →</a>
+      </div>
+
+      <div class="update-layout">
+        <div class="update-list">
+          <div class="update-item">
+            <span class="dot d-new" aria-hidden="true"></span>
+            <div>
+              <h4>新番栏目整理上线<span class="tag tag-new">新</span></h4>
+              <p>本季新作按播出节奏归入同一栏目，追番时不必逐页翻找。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="dot d-hot" aria-hidden="true"></span>
+            <div>
+              <h4>热播榜单一栏更新<span class="tag tag-hot">热</span></h4>
+              <p>依据站内浏览热度调整顺序，作为选片时的参考线索。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="dot d-calm" aria-hidden="true"></span>
+            <div>
+              <h4>剧场版与短片分区</h4>
+              <p>长篇之外的独立作品单独归档，适合一次看完的观看安排。</p>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="dot d-calm" aria-hidden="true"></span>
+            <div>
+              <h4>题材标签补充</h4>
+              <p>新增若干细分标签，分类页的筛选结果更贴近实际偏好。</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="side-card" aria-label="快捷说明">
+          <h3>第一次来？</h3>
+          <p>先看分类导航确定题材，再回更新速览挑具体作品，通常是最省时间的路径。</p>
+          <a class="btn" href="#genres">前往分类导航</a>
+          <ul class="side-list">
+            <li>入口集中在首页顶部</li>
+            <li>分类与标签可组合筛选</li>
+            <li>更新与专题分栏呈现</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容频道 -->
+  <section id="guides" aria-labelledby="guides-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="guides-title">内容频道：看什么，怎么看</h2>
+          <p>除了直接进入作品，91次元动漫官网也设置了几类辅助内容，帮助你在选择之前建立基本判断。</p>
+        </div>
+      </div>
+
+      <div class="read-grid">
+        <article class="read-card">
+          <h3><small>选片思路</small>先定题材，再定长度</h3>
+          <p>面对数量庞大的作品，最有效的做法是先缩小范围。题材决定兴趣方向，集数与单集时长决定你能不能连续看完。短篇适合零散时间，长篇更适合固定时段追更。</p>
+          <p>分类页把这两条线索并列展示，你可以先点题材，再按篇幅筛选，避免在列表里反复来回。</p>
+        </article>
+
+        <article class="read-card">
+          <h3><small>追更习惯</small>把更新节奏记下来</h3>
+          <p>新番通常按固定周期更新，记下大致时间点，比每天打开页面确认更省事。更新速览把近期变动集中呈现，适合在空闲时统一查看。</p>
+          <p>如果同时追多部作品，建议把正在看的几部放在同一分类下，回访时更容易找到进度。</p>
+        </article>
+
+        <article class="read-card">
+          <h3><small>专题与笔记</small>补足作品背景</h3>
+          <p>部分作品涉及改编原作、系列续作或制作团队背景，单独看正片容易漏掉线索。内容频道整理这类背景信息，作为观看前后的补充阅读。</p>
+          <p>专题按主题聚合，适合想系统了解某一类作品时集中浏览，而不是逐部检索。</p>
+        </article>
+
+        <article class="read-card">
+          <h3><small>浏览体验</small>首页负责聚合，详情页负责展开</h3>
+          <p>首页的作用是让你快速判断方向，因此入口、分类与更新被放在最显眼的位置。具体作品的简介、集数等信息在对应页面展开。</p>
+          <p>这样安排的好处是首页保持简洁，不容易因为内容堆叠而失去重点。91次元动漫官网的导航也遵循同样思路，只保留必要栏目。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类导航 -->
+  <section id="genres" aria-labelledby="genres-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="genres-title">分类导航</h2>
+          <p>按题材快速定位想看的方向。点击标签可筛选下方对应分类，全部内容直接展开在本页。</p>
+        </div>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="分类筛选">
+        <button class="chip active" type="button" data-filter="all">全部</button>
+        <button class="chip" type="button" data-filter="story">剧情向</button>
+        <button class="chip" type="button" data-filter="daily">日常向</button>
+        <button class="chip" type="button" data-filter="action">动作向</button>
+      </div>
+
+      <div class="genre-grid" id="genreGrid">
+        <div class="genre" data-cat="story">
+          <h4><span>01</span>热血与成长</h4>
+          <p>以目标驱动的长篇叙事为主，适合连续追更。</p>
+        </div>
+        <div class="genre" data-cat="daily">
+          <h4><span>02</span>日常与治愈</h4>
+          <p>节奏平缓、单集独立，适合碎片时间观看。</p>
+        </div>
+        <div class="genre" data-cat="story">
+          <h4><span>03</span>悬疑与推理</h4>
+          <p>线索推进型作品，建议按顺序观看避免跳集。</p>
+        </div>
+        <div class="genre" data-cat="action">
+          <h4><span>04</span>科幻与机战</h4>
+          <p>世界观设定较重，观看前可先读专题背景。</p>
+        </div>
+        <div class="genre" data-cat="daily">
+          <h4><span>05</span>校园与青春</h4>
+          <p>人物关系为主线，集数多集中在单季长度。</p>
+        </div>
+        <div class="genre" data-cat="action">
+          <h4><span>06</span>奇幻与冒险</h4>
+          <p>架空设定与旅途结构并存，适合整季连看。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 问答 -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="faq-title">常见问题</h2>
+          <p>关于首页入口与内容查找的几处说明，减少重复摸索。</p>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>91次元动漫官网的首页主要提供什么？</summary>
+          <p>首页承担聚合作用，集中展示作品浏览入口、分类导航、更新速览与专题内容。它不是作品详情页，而是帮助你确定方向的第一站。</p>
+        </details>
+        <details>
+          <summary>想找特定题材的作品，应该从哪里开始？</summary>
+          <p>建议先到分类导航，用题材标签缩小范围；如果已经知道大致类型但不确定具体作品，可以结合更新速览中的热度排序作为参考。</p>
+        </details>
+        <details>
+          <summary>更新速览和分类导航有什么区别？</summary>
+          <p>更新速览按时间与热度组织，回答“最近有什么”；分类导航按题材组织，回答“有哪些类型”。两者信息任务不同，可配合使用。</p>
+        </details>
+        <details>
+          <summary>页面里的筛选按钮怎么用？</summary>
+          <p>点击分类筛选标签后，下方分类卡片会按题材显示或隐藏，点“全部”可恢复完整列表，筛选结果直接在当前页生效。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+          91次元动漫官网
+        </div>
+        <p>以首页为起点，串联作品浏览、分类导航、更新速览与专题内容，让找番这件事更直接。</p>
+        <p>栏目结构会随内容补充调整，具体入口以页面呈现为准。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul class="foot-links">
+          <li><a href="#entry">浏览入口</a></li>
+          <li><a href="#updates">更新速览</a></li>
+          <li><a href="#guides">内容频道</a></li>
+          <li><a href="#genres">分类导航</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <ul class="foot-links">
+          <li><a href="#genres">按题材筛选</a></li>
+          <li><a href="#updates">查看近期动态</a></li>
+          <li><a href="#top">回到页面顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>91次元动漫官网 · 首页</span>
+      <span>内容以页面实际展示为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var items = document.querySelectorAll('#genreGrid .genre');
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      items.forEach(function(card){
+        var match = (f === 'all') || card.getAttribute('data-cat') === f;
+        card.style.display = match ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
